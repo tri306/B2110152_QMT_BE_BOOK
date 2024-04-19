@@ -18,7 +18,7 @@ console.log(decoded);
 
 // Routes
 // const authRouter = require('./app/routes/auth.route');
-// const bookRouter = require('./app/routes/book.route'); 
+const bookRouter = require('./app/routes/book.route'); 
 const userRouter = require('./app/routes/user.route');
 // const orderRouter = require('./app/routes/order.route');
 // const cartRouter = require('./app/routes/cart.route');
@@ -31,7 +31,7 @@ app.get("/", (req, res) =>{
 
 
 // app.use("/api/auth", authRouter);
-// app.use("/api/book", bookRouter);
+app.use("/api/book", bookRouter);
 app.use("/api/user", userRouter);
 // app.use("/api/order", orderRouter);
 // app.use("api/cart", cartRouter);
