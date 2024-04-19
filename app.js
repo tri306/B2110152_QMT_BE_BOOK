@@ -3,26 +3,26 @@ const cors = require('cors');
 
 const app = express();
 
-const { createJWT, verifyToken } = require('./app/middleware/verifyToken');
+// const { createJWT, verifyToken } = require('./app/middleware/verifyToken');
 
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // test JWT
 createJWT();
-var decoded = verifyToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVhbiIsImFnZSI6MjAsImlhdCI6MTcxMzM1OTYzNH0.trxcpkNx2r_BGMg35yqSfoobFyS5cAcqsulAswlDj-8');
+// var decoded = verifyToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVhbiIsImFnZSI6MjAsImlhdCI6MTcxMzM1OTYzNH0.trxcpkNx2r_BGMg35yqSfoobFyS5cAcqsulAswlDj-8');
 console.log(decoded);
 
 
 // Routes
-const authRouter = require('./app/routers/auth.route');
-const bookRouter = require('./app/routers/book.route'); 
-const userRouter = require('./app/routers/user.route');
-const orderRouter = require('./app/routers/order.route');
-const cartRouter = require('./app/routers/cart.route');
-const publisherRouter = require('./app/routers/publisher.route');
+// const authRouter = require('./app/routes/auth.route');
+// const bookRouter = require('./app/routes/book.route'); 
+const userRouter = require('./app/routes/user.route');
+// const orderRouter = require('./app/routes/order.route');
+// const cartRouter = require('./app/routes/cart.route');
+// const publisherRouter = require('./app/routes/publisher.route');
 
 
 app.get("/", (req, res) =>{
@@ -30,12 +30,12 @@ app.get("/", (req, res) =>{
 });
 
 
-app.use("/api/auth", authRouter);
-app.use("/api/book", bookRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api/book", bookRouter);
 app.use("/api/user", userRouter);
-app.use("/api/order", orderRouter);
-app.use("api/cart", cartRouter);
-app.use("/api/publisher", publisherRouter);
+// app.use("/api/order", orderRouter);
+// app.use("api/cart", cartRouter);
+// app.use("/api/publisher", publisherRouter);
 
 
 // middleware xử lí lỗi
